@@ -1,0 +1,22 @@
+{
+  "name": "json-scout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/json-scout",
+  "typings": "lib/json-scout",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kishor-p/json-scout.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kishor-p/json-scout/issues"
+  },
+  "homepage": "https://github.com/kishor-p/json-scout#readme"
+}
