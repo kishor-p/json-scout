@@ -1,7 +1,7 @@
 {
   "name": "json-scout",
   "version": "1.0.0",
-  "description": "",
+  "description": "JSON-SCOUT is a library useful to quickly RECURSIVELY search(scout) and extract JSON objects.",
   "main": "lib/json-scout",
   "typings": "lib/json-scout",
   "scripts": {
@@ -12,8 +12,13 @@
     "type": "git",
     "url": "git+https://github.com/kishor-p/json-scout.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "json",
+    "search",
+    "typescript",
+    "scout"
+  ],
+  "author": "Kishor P",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kishor-p/json-scout/issues"
