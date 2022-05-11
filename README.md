@@ -2,18 +2,21 @@
 
 <img src="test/Json-scout-logo.png"  align="left" width="100" height="100">
 
-- JSON-SCOUT is a library useful to quickly RECURSIVELY search (scout) and extract JSON objects.
-- Search could be based on a KEY or VALUE or BOTH.
-- Initilization of the JsonScout can be done either by JSON string or Json Object
+JSON-SCOUT is a library useful to quickly RECURSIVELY search (scout) and extract JSON objects.\
+Search could be based on a KEY or VALUE or BOTH.\
+Initilization of the JsonScout can be done either by JSON string or Json Object\
 - 
 
 ## Usage
-
+### Typescript
 ```
   // Import JSON SCOUT
   const { JsonScout } = require("json-scout");
   
-  // Initilize by createing an Object of JsonScout by passing your JSON object/string to constructor
+  /** 
+   *  Initilize by createing an Object of JsonScout by 
+   *  passing your JSON object/string to constructor
+  **/
   const jScout = new JsonScout(<YOUR_JSON_OBJ>);
   
   // Access function on the create JsonScout object
@@ -22,6 +25,25 @@
   jScout.scoutOneByValue("<VALUE_SEARCH>");
   jScout.scoutAllByKey("<VALUE_SEARCH>");
   
+```
+
+### NodeJs
+```
+// Import JSON SCOUT
+var js = require("json-scout")
+
+/** 
+ *  Initilize by createing an Object of JsonScout by 
+ *  passing your JSON object/string to constructor
+**/
+var jScout = new js.JsonScout(<YOUR_JSON_OBJ>);
+
+ // Access function on the created JsonScout object
+  jScout.scoutOneByKey("<KEY_SEARCH>");
+  jScout.scoutAllByKey("<KEY_SEARCH>");
+  jScout.scoutOneByValue("<VALUE_SEARCH>");
+  jScout.scoutAllByKey("<VALUE_SEARCH>");
+
 ```
 
 ## Functions
