@@ -4,7 +4,7 @@ export class JsonScout {
 
     constructor(sourceDoc:any) {
         if(sourceDoc == null){
-            throw new Error('Please provide Source Json');
+            throw new Error('Please provide Source Json.');
         }
         if(typeof sourceDoc == 'string'){
             try{
