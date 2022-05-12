@@ -1,11 +1,21 @@
-# json-scout 
+# json-scout : A scout for your JSON
 
-<img src="test/Json-scout-logo.png"  align="left" width="100" height="100">
+<img src="resources/json-scout-logo.png"  align="left" width="150" height="150">
 
-JSON-SCOUT is a library useful to quickly RECURSIVELY search (scout) and extract JSON objects.\
-Search could be based on a KEY or VALUE or BOTH.\
-Initilization of the JsonScout can be done either by JSON string or Json Object\
-- 
+#### &nbsp;
+#### JSON-SCOUT is a useful library to RECURSIVELY search(scout) and extract JSON objects.
+#### &nbsp;
+#### Search could be performed based on a KEY or VALUE or BOTH.
+#### &nbsp;
+#### Initialization of the JsonScout can be done either by JSON string or Json Object
+#### &nbsp;
+
+## Installation
+This package can be download via Node, NPM using below command
+
+```
+npm install json-scout
+```
 
 ## Usage
 ### Typescript
@@ -14,7 +24,7 @@ Initilization of the JsonScout can be done either by JSON string or Json Object\
   const { JsonScout } = require("json-scout");
   
   /** 
-   *  Initilize by createing an Object of JsonScout by 
+   *  initialize by creating an Object of JsonScout by 
    *  passing your JSON object/string to constructor
   **/
   const jScout = new JsonScout(<YOUR_JSON_OBJ>);
@@ -33,7 +43,7 @@ Initilization of the JsonScout can be done either by JSON string or Json Object\
 var js = require("json-scout")
 
 /** 
- *  Initilize by createing an Object of JsonScout by 
+ *  initialize by creating an Object of JsonScout by 
  *  passing your JSON object/string to constructor
 **/
 var jScout = new js.JsonScout(<YOUR_JSON_OBJ>);
@@ -49,31 +59,43 @@ var jScout = new js.JsonScout(<YOUR_JSON_OBJ>);
 ## Functions
 
 ###  ``` JsonScout(<YOUR_JSON_OBJ>: object/string) ```  
-- Constructor to initilize the Json Scout. 
-- Luckly it can take both object and string.
-- Example: ```const jScout =  new JsonScout('[{"name": "Kishor", "age": 30}, {"name": "Venni", "age": 28}]'); ```  
+- Constructor to initialize the Json Scout. 
+- Luckily it can take both object and string.
+- Example: ```const jScout =  new JsonScout('[{"name": "Kevin", "age": 30}, {"name": "Vanessa", "age": 28}]'); ```  
 
-### ``` scoutOneByKey(<SEARCHKEY>: string) ```
-- RECURSIVELY searchs the initilized JSON based on KEY
-- Returns the First Object contianing the searched KEY.
+### ``` scoutOneByKey(<SEARCH_KEY>: string) ```
+- RECURSIVELY searches the initialized JSON based on KEY
+- Returns the First Object containing the searched KEY.
 - Example: ``` jScout.scoutOneByKey("name"); ```
-- Result: ``` {"name": "Kishor", "age": 30} ```
+- Result: ``` {"name": "Kevin", "age": 30} ```
 
-### ``` scoutAllByKey(<SEARCHKEY>: string) ```
-- RECURSIVELY searchs the initilized JSON based on KEY
-- Returns ALL the Objects contianing the searched KEY.
+### ``` scoutAllByKey(<SEARCH_KEY>: string) ```
+- RECURSIVELY searches the initialized JSON based on KEY
+- Returns ALL the Objects containing the searched KEY.
 - Example: ``` jScout.scoutAllByKey("name"); ```
-- Result: ``` [{"name": "Kishor", "age": 30}, {"name": "Venni", "age": 28}] ```
+- Result: ``` [{"name": "Kevin", "age": 30}, {"name": "Vanessa", "age": 28}] ```
 
 ### ``` scoutOneByValue(<SEARCH_VALUE>: string) ```
-- RECURSIVELY searchs the initilized JSON based on VALUE
-- Returns the First Object contianing the searched VALUE.
-- Example: ``` jScout.scoutAllByValue("Venni"); ```
-- Result: ``` {"name": "Venni", "age": 28} ```
+- RECURSIVELY searches the initialized JSON based on VALUE
+- Returns the First Object containing the searched VALUE.
+- Example: ``` jScout.scoutAllByValue("Vanessa"); ```
+- Result: ``` {"name": "Vanessa", "age": 28} ```
 
 ### ``` scoutAllByValue(<SEARCH_VALUE>: string) ```
-- RECURSIVELY searchs the initilized JSON based on VALUE
-- Returns ALL the Objects contianing the searched VALUE.
+- RECURSIVELY searches the initialized JSON based on VALUE
+- Returns ALL the Objects containing the searched VALUE.
 - Example: ``` jScout.scoutAllByValue(28); ```
-- Result: ``` [{"name": "Venni", "age": 28}] ```
+- Result: ``` [{"name": "Vanessa", "age": 28}] ```
+
+### ``` scoutOneByKeyValue(<SEARCH_VALUE>: string) ```
+- RECURSIVELY searches the initialized JSON based on provided KEY and VALUE
+- Returns the First Object containing the searched KEY and VALUE.
+- Example: ``` jScout.scoutOneByKeyValue("age", 28); ```
+- Result: ``` {"name": "Vanessa", "age": 28} ```
+
+### ``` scoutAllByKeyValue(<SEARCH_VALUE>: string) ```
+- RECURSIVELY searches the initialized JSON based on KEY and VALUE
+- Returns ALL the Objects containing the searched KEY and VALUE.
+- Example: ``` jScout.scoutAllByKeyValue("age", 28); ```
+- Result: ``` [{"name": "Vanessa", "age": 28}] ```
 
