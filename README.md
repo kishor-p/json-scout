@@ -17,6 +17,10 @@ This package can be download via Node, NPM using below command
 npm install json-scout
 ```
 
+```
+npm test
+```
+
 ## Usage
 ### Typescript
 ```
