@@ -1,6 +1,6 @@
 {
   "name": "json-scout",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "JSON-SCOUT is a library useful to quickly RECURSIVELY search(scout) and extract JSON objects.",
   "main": "lib/json-scout",
   "typings": "lib/json-scout",

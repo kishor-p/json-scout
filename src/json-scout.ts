@@ -174,26 +174,27 @@ export class JsonScout {
      * @returns 
      */
     private recursiveSearchByKey(obj: any, key: string, howMany: number): any {
-
-        let currKeys: string[] = Object.keys(obj);
-        if(currKeys.indexOf(key) > -1){
-            this.searchByKeyResults.push(obj);
-            if(howMany != -1 && this.searchByKeyResults.length == howMany){
-                return;
-            }
-        } 
-        let propIndex;
-        for(propIndex in obj){
-            if(typeof obj[propIndex] === 'object'){
-                let innerObj = this.recursiveSearchByKey(obj[propIndex], key, howMany);
-                if(innerObj != null){
-                    this.searchByKeyResults.push(obj);
-                    if(howMany != -1 && this.searchByKeyResults.length == howMany){
-                        return;
+        if(obj != null){
+            let currKeys: string[] = Object.keys(obj);
+            if(currKeys.indexOf(key) > -1){
+                this.searchByKeyResults.push(obj);
+                if(howMany != -1 && this.searchByKeyResults.length == howMany){
+                    return;
+                }
+            } 
+            let propIndex;
+            for(propIndex in obj){
+                if(typeof obj[propIndex] === 'object'){
+                    let innerObj = this.recursiveSearchByKey(obj[propIndex], key, howMany);
+                    if(innerObj != null){
+                        this.searchByKeyResults.push(obj);
+                        if(howMany != -1 && this.searchByKeyResults.length == howMany){
+                            return;
+                        }
                     }
                 }
+                
             }
-            
         }
     }
 
@@ -210,27 +211,28 @@ export class JsonScout {
      * @returns 
      */
     private recursiveSearchByValue(obj: any, value: string, howMany: number): any {
-        
-        let propIndex;
-        for(propIndex in obj){
-
-            if(obj[propIndex] != 'object' && obj[propIndex] === value){
-                this.searchByValueResults.push(obj);
-                if(howMany != -1 && this.searchByValueResults.length == howMany){
-                    return;
-                }
-            }
-            
-            if(typeof obj[propIndex] === 'object'){
-                let innerObj = this.recursiveSearchByValue(obj[propIndex], value, howMany);
-                if(innerObj != null){
+        if(obj != null){
+            let propIndex;
+            for(propIndex in obj){
+    
+                if(obj[propIndex] != 'object' && obj[propIndex] === value){
                     this.searchByValueResults.push(obj);
                     if(howMany != -1 && this.searchByValueResults.length == howMany){
                         return;
                     }
                 }
+                
+                if(typeof obj[propIndex] === 'object'){
+                    let innerObj = this.recursiveSearchByValue(obj[propIndex], value, howMany);
+                    if(innerObj != null){
+                        this.searchByValueResults.push(obj);
+                        if(howMany != -1 && this.searchByValueResults.length == howMany){
+                            return;
+                        }
+                    }
+                }
+                
             }
-            
         }
     }
 
@@ -247,26 +249,27 @@ export class JsonScout {
      * @returns 
      */
     private recursiveSearchByKeyValue(obj: any, key: string, value: any, howMany: number): any {
-
-        let currKeys: string[] = Object.keys(obj);
-        if(currKeys.indexOf(key) > -1 && obj[key] === value){
-            this.searchByKeyValueResults.push(obj);
-            if(howMany != -1 && this.searchByKeyValueResults.length == howMany){
-                return;
-            }
-        } 
-        let propIndex;
-        for(propIndex in obj){
-            if(typeof obj[propIndex] === 'object'){
-                let innerObj = this.recursiveSearchByKeyValue(obj[propIndex], key, value, howMany);
-                if(innerObj != null){
-                    this.searchByKeyValueResults.push(obj);
-                    if(howMany != -1 && this.searchByKeyValueResults.length == howMany){
-                        return;
+        if(obj != null){
+            let currKeys: string[] = Object.keys(obj);
+            if(currKeys.indexOf(key) > -1 && obj[key] === value){
+                this.searchByKeyValueResults.push(obj);
+                if(howMany != -1 && this.searchByKeyValueResults.length == howMany){
+                    return;
+                }
+            } 
+            let propIndex;
+            for(propIndex in obj){
+                if(typeof obj[propIndex] === 'object'){
+                    let innerObj = this.recursiveSearchByKeyValue(obj[propIndex], key, value, howMany);
+                    if(innerObj != null){
+                        this.searchByKeyValueResults.push(obj);
+                        if(howMany != -1 && this.searchByKeyValueResults.length == howMany){
+                            return;
+                        }
                     }
                 }
+                
             }
-            
         }
     }
 
